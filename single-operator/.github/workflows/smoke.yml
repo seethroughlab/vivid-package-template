@@ -1,0 +1,15 @@
+name: smoke
+on: [push, pull_request]
+jobs:
+  smoke:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Clone vivid-core
+        run: git clone --depth 1 https://github.com/seethroughlab/vivid.git ../vivid
+      - name: Build vivid-core smoke target
+        run: |
+          cmake -B ../vivid/build -S ../vivid
+          cmake --build ../vivid/build --target test_demo_graphs
+      - name: Run package graph smoke
+        run: ../vivid/build/test_demo_graphs "$GITHUB_WORKSPACE/graphs"

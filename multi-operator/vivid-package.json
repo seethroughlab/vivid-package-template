@@ -1,0 +1,16 @@
+{
+  "name": "your-package-name",
+  "version": "0.1.0",
+  "vivid_core": ">=0.1.0 <2.0.0",
+  "description": "Multi-operator package for Vivid",
+  "author": "Your Name",
+  "operators": [
+    "audio/example_audio",
+    "control/example_control",
+    "gpu/example_gpu"
+  ],
+  "tests": {
+    "graphs": ["graphs/demo.json"],
+    "cpp": ["tests/test_package_placeholder.cpp"]
+  }
+}
