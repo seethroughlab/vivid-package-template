@@ -27,6 +27,14 @@ Both templates include:
    - `./build/vivid link ../your-package`
    - `./build/vivid rebuild your-package-name`
 
+## Authoring + Releases
+
+See `AUTHORING.md` for:
+
+- naming/versioning conventions
+- dependency guidance
+- release tagging + compatibility notes
+
 ## Notes
 
 - Keep `vivid-package.json` operator entries in sync with `operators/`.
