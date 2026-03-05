@@ -14,3 +14,8 @@ Single-operator Vivid package.
 ./build/vivid link ../your-package-name
 ./build/vivid rebuild your-package-name
 ```
+
+## CI expectations
+
+- Graph smoke via `test_demo_graphs ./graphs`
+- Package C++ test placeholder via `ctest` when `BUILD_PACKAGE_TESTS=ON`

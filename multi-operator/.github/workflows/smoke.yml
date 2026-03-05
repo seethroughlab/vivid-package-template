@@ -13,3 +13,10 @@ jobs:
           cmake --build ../vivid/build --target test_demo_graphs
       - name: Run package graph smoke
         run: ../vivid/build/test_demo_graphs "$GITHUB_WORKSPACE/graphs"
+      - name: Build + run package C++ tests
+        run: |
+          cmake -B build-ci -S . \
+            -DVIVID_SRC_DIR="$GITHUB_WORKSPACE/../vivid" \
+            -DBUILD_PACKAGE_TESTS=ON
+          cmake --build build-ci --target test_package_placeholder
+          ctest --test-dir build-ci --output-on-failure

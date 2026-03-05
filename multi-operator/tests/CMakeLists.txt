@@ -1,0 +1,2 @@
+add_executable(test_package_placeholder tests/test_package_placeholder.cpp)
+add_test(NAME test_package_placeholder COMMAND test_package_placeholder)

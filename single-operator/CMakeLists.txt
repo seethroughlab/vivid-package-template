@@ -9,6 +9,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+option(BUILD_PACKAGE_TESTS "Build package-local C++ tests" OFF)
+
 include_directories(${VIVID_SRC_DIR}/src)
 
 function(add_vivid_pkg_operator name src)
@@ -17,3 +19,8 @@ function(add_vivid_pkg_operator name src)
 endfunction()
 
 add_vivid_pkg_operator(example_op operators/control/example_op/example_op.cpp)
+
+if(BUILD_PACKAGE_TESTS)
+  enable_testing()
+  add_subdirectory(tests)
+endif()
